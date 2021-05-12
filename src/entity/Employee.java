@@ -2,27 +2,25 @@ package entity;
 
 import javax.persistence.*;
 
-//Employee Entity
-@Entity //This will let Java know that this is an entity that we are going to map to a database table.
-@Table(name = "employee") //This is for the actual name of the database table name we are mapping to the class.
+
+@Entity
+@Table(name = "employee")
 public class Employee {
 
-    //Database Mapping
-    @Id //This will map the primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //This is used with auto increment for your primary key.
-    @Column(name = "id") //This is mapping the primary key to the id column in your database.
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "first_name") //This will map the firstName field to the column named first_name in your student table.
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name") //This will map the lastName field to the column named last_name in your student table.
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "company") //This will map the email field to the column named email in your student table.
+    @Column(name = "company")
     private  String company;
 
-    //Constructors
     public Employee() {
 
     }
@@ -33,7 +31,6 @@ public class Employee {
         this.company = company;
     }
 
-    //Getters and Setters
     public int getId() {
         return id;
     }
@@ -66,7 +63,6 @@ public class Employee {
         this.company = email;
     }
 
-    //To string method
     @Override
     public String toString() {
         return "Employee{" +
